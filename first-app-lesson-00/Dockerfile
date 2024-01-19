@@ -3,7 +3,7 @@ FROM node:14-alpine as builder
 COPY package.json ./
 
 #COPY .npmrc .npmrc 
-RUN python --version 
+# RUN python --version 
 RUN python3 --version
 RUN npm build  
 
