@@ -4,7 +4,7 @@ COPY package.json ./
 
 #COPY .npmrc .npmrc 
 
-#RUN npm install  
+RUN npm build  
 
 ## Storing node modules on a separate layer will prevent unnecessary npm installs at each build
 
