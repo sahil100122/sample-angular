@@ -4,7 +4,8 @@ COPY package.json ./
 
 #COPY .npmrc .npmrc 
 # RUN python --version 
-RUN python3 --version
+RUN apk add --update python make g++\
+   && rm -rf /var/cache/apk/*
 RUN npm build  
 
 ## Storing node modules on a separate layer will prevent unnecessary npm installs at each build
