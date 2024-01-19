@@ -1,4 +1,4 @@
-FROM node:14-alpine as builder
+FROM node:18-alpine as builder
 
 COPY package.json ./
 
@@ -6,7 +6,7 @@ COPY package.json ./
 # RUN python --version 
 RUN apk add --update python3 make g++\
    && rm -rf /var/cache/apk/*
-RUN npm build  
+RUN npm build
 
 ## Storing node modules on a separate layer will prevent unnecessary npm installs at each build
 
