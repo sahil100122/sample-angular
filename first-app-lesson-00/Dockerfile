@@ -7,8 +7,8 @@ COPY package.json ./
 RUN apk add --update python3 make g++
 
 ## Storing node modules on a separate layer will prevent unnecessary npm installs at each build
-
-RUN npm i && mkdir /kcommunications-ui-client && mv ./node_modules ./kcommunications-ui-client
+RUN npm build
+RUN npm ci && mkdir /kcommunications-ui-client && mv ./node_modules ./kcommunications-ui-client
 
 RUN rm -f .npmrc
 
