@@ -4,7 +4,7 @@ COPY package.json ./
 
 #COPY .npmrc .npmrc 
 # RUN python --version 
-RUN apk add --update python make g++\
+RUN apk add --update python3 make g++\
    && rm -rf /var/cache/apk/*
 RUN npm build  
 
