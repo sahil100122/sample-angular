@@ -2,7 +2,7 @@ FROM node:14-alpine as builder
 
 COPY package.json ./
 
-COPY .npmrc .npmrc 
+#COPY .npmrc .npmrc 
 
 #RUN npm install  
 
